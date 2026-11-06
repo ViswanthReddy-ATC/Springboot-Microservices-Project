@@ -19,6 +19,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="serviceRegistry" />
+        <module name="apiGateway" />
       </profile>
       <profile name="Annotation profile for employee-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -35,6 +36,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="apiGateway" options="-parameters" />
       <module name="department-service" options="-parameters" />
       <module name="employee-service" options="-parameters" />
       <module name="serviceRegistry" options="-parameters" />
