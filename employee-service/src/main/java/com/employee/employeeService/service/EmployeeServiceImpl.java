@@ -34,6 +34,7 @@ public class EmployeeServiceImpl implements  EmployeeService{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public EmployeeDto getById(long id) {
         Employee emp = employeeRepository.getById(id);
         return employeeMapper.employeeToEmployeeDto(emp);
@@ -45,7 +46,7 @@ public class EmployeeServiceImpl implements  EmployeeService{
 
         EmployeeDto emp = getById(id);
 
-        String url = "http://localhost:8080/api/departments/" + emp.getDeptId();
+        //String url = "http://localhost:8080/api/departments/" + emp.getDeptId();
 
         //Calling Department service using Rest Template
        /* ResponseEntity<DepartmentDto> response =
